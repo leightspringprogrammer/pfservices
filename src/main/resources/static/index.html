@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+  <title>Company Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #e34f6a;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Primerica Financial Services</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      	<li><a class="dropdown-toggle" data-toggle="dropdown">Services<span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+		    <li><a href="lifeinsurance">Life Insurance</a></li>
+		    <li><a href="homeinsurance">Home Insurance</a></li>
+		    <li><a href="autoinsurance">Auto Insurance</a></li>
+		    <li><a href="debtconsolidation">Debt Consolidation</a></li>
+		    <li><a href="taxresolution">Tax Resolution</a></li>
+		    <li><a href="prepaidlegal">Pre-Paid Legal</a></li>
+		    <li><a href="identitytheft">Identity Theft</a></li>
+		    <li><a href="collegefunds">College Funds</a></li>
+		    <li><a href="mutualfunds">Mutual Funds</a></li>
+		    <li><a href="variableannuity">Variable Annuity</a></li>
+		    <li><a href="401k">401K Portfolio</a></li>
+		    <li><a href="43b">43B Portfolio</a></li>
+		    <li><a href="ira">IRA Portfolio</a></li>
+		    <li><a href="rothira">Roth IRA Portfolio</a></li>
+		  </ul>
+  		</li>
+        <li><a href="about">About</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+      <ul sec:authorize="isAuthenticated()" class="nav navbar-nav navbar-right">
+        <li><a href="/admin"><span class="glyphicon glyphicon-user" sec:authentication="name"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a target="_blank" href="http://www.primericafna.com/public/financialneedsanalysis/what-the-fna-covers.html">Financial Needs Analysis</a></p>
+      <p><a href="#">Learn More</a></p>
+    </div>
+    <div class="col-sm-10 text-left"> 
+    <!--   <div class="container"> -->
+      	<img src="pictures/dadanddaughter.png" class="img-responsive">
+     <!--   </div> -->
+      <p>Hello welcome to <span style="color:#ebb134; font-weight:bold;">Primerica Financial Services</span>. At Primerica we help our clients organize their finances and invest or get started in financial services such as: </p>
+      <ul style="color:blue;">
+	      <li>Debt Consolidation</li>
+	      <li>Retirement Planning</li>
+	      <li>Home, auto, and life insurance</li>
+	      <li>Mutual funds, college funds, emergency funds</li>
+	      <li>401k portfolios, IRAs</li>
+	      <li>Identity theft insurance and acquiring a prepaid legal </li>
+      </ul>
+      <p>These services are tailored and can range from acquiring a brand new plan to lowering the cost of your current plan.</p>
+	  <p><span style="font-style:italic;">Life Happens;</span> don't get caught out in the rain. Invest in plans for your future and the future of your children for a financially secure and stable life.</p>	    
+      <hr>
+      
+      
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-right">
+  <p style="font-weight:bold;">&copy; Primerica Financial Services 2019</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+	
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<title>Save FollowUp</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<h3>FollowUp Directory</h3>
+			<hr>
+			
+			<p class="h4 mb-4">Save FollowUp</p>
+			
+			<form action="#" th:action="@{/admin/appointments/save}"
+							 th:object="${FollowUp}" method="POST">
+					
+					<!-- Add hidden for field to handle update -->
+					<input type="hidden" th:field="*{id}" />
+					
+					
+							
+					Name <input  type="text" th:field="*{name}"
+							class="form-control mb-4 col-4" >
+							
+					Phone Number<input type="text" th:field="*{phoneNumber}"
+							class="form-control mb-4 col-4" >
+							
+					Email<input type="text" th:field="*{email}"
+							class="form-control mb-4 col-4" >
+							
+					Next Appointment<input type="date" th:field="*{appointmentDate}"
+							class="form-control mb-4 col-4" >
+							
+					Notes<input type="text" th:field="*{note}"
+							class="form-control mb-4 col-4" >
+							
+							
+					<button type="submit" class="btn btn-info col-2">Save</button>
+			
+			</form>
+			<hr>
+			<a th:href="@{/admin/appointments/list}">Back to FollowUp List</a>
+		</div>
+	
+	</body>
+
+</html>
